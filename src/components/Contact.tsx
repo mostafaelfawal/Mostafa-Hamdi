@@ -7,6 +7,7 @@ export default function Contact() {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
   const [errors, setErrors] = useState<{ [key: string]: boolean }>({});
   const [success, setSuccess] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -22,6 +23,7 @@ export default function Contact() {
 
     // إرسال البيانات إلى Formspree
     try {
+      setLoading(true);
       const res = await fetch("https://formspree.io/f/xblzydvr", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -34,8 +36,10 @@ export default function Contact() {
       } else {
         setSuccess("❌ Failed to send message, try again later.");
       }
+      setLoading(false);
     } catch {
       setSuccess("❌ Failed to send message, try again later.");
+      setLoading(false);
     }
   };
 
@@ -187,15 +191,21 @@ export default function Contact() {
                 } rounded-lg bg-white dark:bg-slate-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition`}
               ></textarea>
             </motion.div>
-
-            <motion.button
-              type="submit"
-              className="w-full px-8 py-4 bg-primary-light text-white rounded-lg font-semibold hover:bg-primary transition-colors"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              Send Message
-            </motion.button>
+            <div className="relative">
+              <motion.button
+                type="submit"
+                disabled={loading}
+                className="disabled:bg-primary/70 w-full px-8 py-4 bg-primary-light text-white rounded-lg font-semibold hover:bg-primary transition-colors"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                {loading ? (
+                  <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 size-5 rounded-full border-2 border-black border-t-transparent animate-spin"></div>
+                ) : (
+                  "Send Message"
+                )}
+              </motion.button>
+            </div>
 
             {success && (
               <p className="text-center text-sm mt-2 text-green-500 dark:text-green-400">
