@@ -39,10 +39,12 @@ export default function Hero() {
           Front-End Developer
         </h2>
         <p className="text-gray-600 dark:text-gray-400 text-lg">
-          Crafting modern, responsive, and high-performance web apps <br />
-          with <span className="text-primary font-medium">React.js</span>,{" "}
-          <span className="text-primary font-medium">TypeScript</span> &{" "}
-          <span className="text-primary font-medium">TailwindCSS</span>.
+          Building modern, scalable, and high-performance web applications{" "}
+          <br />
+          with <span className="text-primary font-medium">Next.js</span>,{" "}
+          <span className="text-primary font-medium">TypeScript</span>,{" "}
+          <span className="text-primary font-medium">TailwindCSS</span> &{" "}
+          <span className="text-primary font-medium">React.js</span>.
         </p>
       </motion.div>
 

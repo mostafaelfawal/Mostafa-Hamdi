@@ -12,7 +12,7 @@ import {
   FaBrain,
 } from "react-icons/fa";
 import { MdSyncProblem } from "react-icons/md";
-import { RiTeamFill } from "react-icons/ri";
+import { RiNextjsFill, RiTeamFill } from "react-icons/ri";
 import {
   SiTailwindcss,
   SiTypescript,
@@ -21,6 +21,7 @@ import {
   SiVercel,
   SiAxios,
   SiVite,
+  SiFirebase,
 } from "react-icons/si";
 import type { listSkills } from "../types";
 import SkillsContainer from "./SkillsContainer";
@@ -47,9 +48,13 @@ export default function About() {
     { name: "React.js", icon: <FaReact className="text-blue-400" /> },
     { name: "TailwindCSS", icon: <SiTailwindcss className="text-cyan-400" /> },
     { name: "Vite", icon: <SiVite className="text-purple-500" /> },
-    { name: "Git/GitHub", icon: <FaGitAlt className="text-red-500" /> },
+    { name: "Firebase", icon: <SiFirebase className="text-orange-500" /> },
+    { name: "Git/GitHub", icon: <FaGitAlt className="text-red-600" /> },
     { name: "Vercel", icon: <SiVercel className="text-gray-800" /> },
-    // { name: "Next.js",icon: <RiNextjsFill className="dark:text-white text-black" /> },
+    {
+      name: "Next.js",
+      icon: <RiNextjsFill className="dark:text-white text-black" />,
+    },
   ];
 
   const devTools: listSkills[] = [
@@ -105,12 +110,14 @@ export default function About() {
             className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed"
             variants={item}
           >
-            I’m a self-taught Front-End Developer who started coding at 15. I
-            specialize in creating modern, user-friendly web applications using
-            React.js, TypeScript, and TailwindCSS. I’m always eager to learn new
-            technologies, improve performance, and deliver clean, maintainable
-            code. My goal is to combine strong technical skills with creativity
-            to build products that provide great user experiences.
+            I’m a Front-End Developer passionate about creating modern,
+            responsive, and high-performance web applications. I specialize in
+            <span className="text-primary font-medium"> Next.js</span>,{" "}
+            <span className="text-primary font-medium">React.js</span>,{" "}
+            <span className="text-primary font-medium">TypeScript</span>, and{" "}
+            <span className="text-primary font-medium">TailwindCSS</span>.
+            Always eager to learn and improve, I focus on building clean code
+            and delivering great user experiences.
           </motion.p>
 
           {/* Skills Sections */}
