@@ -17,23 +17,33 @@ button {
   height: 8px; /* ارتفاع الشريط الأفقي لو موجود */
 }
 
+/* الوضع العادي */
 ::-webkit-scrollbar-track {
-  background: #f1f1f1; /* لون الخلفية للشريط */
+  background: #ffffff; /* أبيض */
   border-radius: 8px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: var(--color-primary); /* لون المقبض */
+  background-color: var(--color-primary);
   border-radius: 8px;
-  border: 2px solid #f1f1f1; /* فراغ حول المقبض */
+  border: 2px solid #ffffff;
 }
 
 ::-webkit-scrollbar-thumb:hover {
   background-color: var(--color-primary-light);
 }
 
-/* Firefox */
+/* وضع الداكن */
+.dark ::-webkit-scrollbar-track {
+  background: #000000; /* أسود */
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  border: 2px solid #000000;
+}
+
+/* الوضع العادي (Firefox) */
 * {
   scrollbar-width: thin;
-  scrollbar-color: var(--color-primary) #f1f1f1;
+  scrollbar-color: var(--color-primary) #000000; /* thumb / track */
 }

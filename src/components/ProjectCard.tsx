@@ -24,7 +24,7 @@ export default function ProjectCard({
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.3 }}
     >
-      <img className="w-full h-48 object-cover" src={img} alt={title} />
+      <img onClick={() => window.open(liveDemoLink, "_blank")} className="cursor-pointer w-full h-48 object-cover" src={img} alt={title} />
       <div className="p-6 flex flex-col flex-grow">
         <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
           {title}
