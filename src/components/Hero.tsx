@@ -28,12 +28,21 @@ export default function Hero() {
       initial="hidden"
       animate="visible"
     >
-      <motion.div className="md:text-left text-center max-w-xl space-y-4" variants={childVariants}>
+      <motion.div
+        className="md:text-left text-center max-w-xl space-y-4"
+        variants={childVariants}
+      >
         <h1 className="mt-5 text-4xl md:text-6xl font-bold text-gray-900 dark:text-white leading-tight">
           Hi, I'm <span className="text-primary">Mostafa Hamdi</span>
         </h1>
+        <h2 className="text-2xl md:text-3xl font-semibold text-gray-800 dark:text-gray-200">
+          Front-End Developer
+        </h2>
         <p className="text-gray-600 dark:text-gray-400 text-lg">
-          Front-End Developer | React.js | TypeScript | TailwindCSS
+          Crafting modern, responsive, and high-performance web apps <br />
+          with <span className="text-primary font-medium">React.js</span>,{" "}
+          <span className="text-primary font-medium">TypeScript</span> &{" "}
+          <span className="text-primary font-medium">TailwindCSS</span>.
         </p>
       </motion.div>
 

@@ -22,8 +22,8 @@ import {
   SiAxios,
   SiVite,
 } from "react-icons/si";
-import type { Skills } from "../types";
-import Skill from "./Skill";
+import type { listSkills } from "../types";
+import SkillsContainer from "./SkillsContainer";
 
 const container = {
   hidden: { opacity: 0 },
@@ -39,7 +39,7 @@ const item = {
 };
 
 export default function About() {
-  const languages: Skills[] = [
+  const languages: listSkills[] = [
     { name: "HTML", icon: <FaHtml5 className="text-orange-500" /> },
     { name: "CSS", icon: <FaCss3Alt className="text-blue-500" /> },
     { name: "JavaScript", icon: <FaJs className="text-yellow-500" /> },
@@ -49,16 +49,17 @@ export default function About() {
     { name: "Vite", icon: <SiVite className="text-purple-500" /> },
     { name: "Git/GitHub", icon: <FaGitAlt className="text-red-500" /> },
     { name: "Vercel", icon: <SiVercel className="text-gray-800" /> },
+    // { name: "Next.js",icon: <RiNextjsFill className="dark:text-white text-black" /> },
   ];
 
-  const devTools: Skills[] = [
+  const devTools: listSkills[] = [
     { name: "VS Code", icon: <BiLogoVisualStudio className="text-blue-500" /> },
     { name: "Postman", icon: <SiPostman className="text-orange-500" /> },
     { name: "Axios", icon: <SiAxios className="text-purple-500" /> },
     { name: "Redux", icon: <SiRedux className="text-purple-700" /> },
   ];
 
-  const softSkills: Skills[] = [
+  const softSkills: listSkills[] = [
     {
       name: "Problem-Solving",
       icon: <MdSyncProblem className="text-yellow-500" />,
@@ -68,7 +69,10 @@ export default function About() {
   ];
 
   return (
-    <section id="About" className="max-w-7xl mx-auto px-6 py-16 md:text-left text-center">
+    <section
+      id="About"
+      className="max-w-7xl mx-auto px-6 py-16 md:text-left text-center"
+    >
       {/* Title */}
       <motion.h2
         className="text-center text-4xl font-bold text-gray-900 dark:text-white mb-4"
@@ -89,7 +93,7 @@ export default function About() {
         and a keen eye for design.
       </motion.p>
 
-      <div className="flex flex-col md:flex-row justify-between mt-10 gap-10 items-center">
+      <div className="flex flex-col lg:flex-row justify-between mt-10 gap-10 items-center">
         {/* About Text */}
         <motion.div
           className="max-w-xl space-y-6"
@@ -112,74 +116,31 @@ export default function About() {
           {/* Skills Sections */}
           <div className="space-y-6">
             {/* Languages & Tools */}
-            <motion.div
-              className="bg-gray-100 dark:bg-gray-800 rounded-xl p-4 shadow-lg"
+            <SkillsContainer
+              listSkills={languages}
+              icon={<FaCode />}
+              name="Languages & Tools"
               variants={item}
-            >
-              <div className="flex items-center gap-2 text-blue-500 font-semibold text-lg mb-2">
-                <FaCode /> Languages & Tools
-              </div>
-              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
-                {languages.map((lang) => (
-                  <motion.div
-                    key={lang.name}
-                    className="flex items-center gap-2 bg-white dark:bg-gray-700 rounded-lg p-2 shadow hover:scale-105 transition-transform"
-                    whileHover={{ scale: 1.05 }}
-                    variants={item}
-                  >
-                    {lang.icon}
-                    <span className="text-gray-700 dark:text-gray-200 text-sm">
-                      {lang.name}
-                    </span>
-                  </motion.div>
-                ))}
-              </div>
-            </motion.div>
+              color="text-blue-500"
+            />
 
             {/* Developer Tools */}
-            <motion.div
-              className="bg-gray-100 dark:bg-gray-800 rounded-xl p-4 shadow-lg"
+            <SkillsContainer
+              listSkills={devTools}
+              icon={<FaTools />}
+              name="Developer Tools"
               variants={item}
-            >
-              <div className="flex items-center gap-2 text-green-500 font-semibold text-lg mb-2">
-                <FaTools /> Developer Tools
-              </div>
-              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
-                {devTools.map((tool) => (
-                  <motion.div
-                    key={tool.name}
-                    className="flex items-center gap-2 bg-white dark:bg-gray-700 rounded-lg p-2 shadow hover:scale-105 transition-transform"
-                    whileHover={{ scale: 1.05 }}
-                    variants={item}
-                  >
-                    {tool.icon}
-                    <span className="text-gray-700 dark:text-gray-200 text-sm">
-                      {tool.name}
-                    </span>
-                  </motion.div>
-                ))}
-              </div>
-            </motion.div>
+              color="text-green-500"
+            />
 
             {/* Soft Skills */}
-            <motion.div
-              className="bg-gray-100 dark:bg-gray-800 rounded-xl p-4 shadow-lg"
+            <SkillsContainer
+              listSkills={softSkills}
+              icon={<FaServer />}
+              name="Soft Skills"
               variants={item}
-            >
-              <div className="flex items-center gap-2 text-yellow-500 font-semibold text-lg mb-2">
-                <FaServer /> Soft Skills
-              </div>
-              <div className="flex flex-wrap gap-3">
-                {softSkills.map((skill) => (
-                  <Skill
-                    key={skill.name}
-                    variants={item}
-                    name={skill.name}
-                    icon={skill.icon}
-                  />
-                ))}
-              </div>
-            </motion.div>
+              color="text-yellow-500"
+            />
           </div>
         </motion.div>
 
