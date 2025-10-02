@@ -10,6 +10,7 @@ import {
   FaTools,
   FaCode,
   FaBrain,
+  FaPython,
 } from "react-icons/fa";
 import { MdSyncProblem } from "react-icons/md";
 import { RiNextjsFill, RiTeamFill } from "react-icons/ri";
@@ -55,6 +56,7 @@ export default function About() {
       name: "Next.js",
       icon: <RiNextjsFill className="dark:text-white text-black" />,
     },
+    {name: "Python", icon: <FaPython className="text-blue-400"/>}
   ];
 
   const devTools: listSkills[] = [
