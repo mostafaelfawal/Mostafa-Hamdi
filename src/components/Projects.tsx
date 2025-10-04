@@ -51,14 +51,14 @@ export default function Projects() {
         <ProjectCard
           img="/images/TodoList.png"
           title="Todo List App"
-          description="Cartoon-style Todo List App with CRUD, filters, and Local Storage"
+          description="Cartoon-themed Todo app with CRUD, task filters, and persistent data via Local Storage."
           liveDemoLink="https://my-todo-phi-one.vercel.app/"
           githubLink="https://github.com/mostafaelfawal/Todo"
         />
         <ProjectCard
           img="/images/Estate landing page.png"
           title="Estate landing page"
-          description="Cartoon-style Todo List App with CRUD, filters, and Local Storage"
+          description="Responsive real estate landing page with smooth animations and modern UI."
           liveDemoLink="https://amjaad-estate-lading.vercel.app/"
           githubLink="https://github.com/mostafaelfawal/Amjaad-Lading-Page"
         />
