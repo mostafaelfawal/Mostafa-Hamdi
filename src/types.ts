@@ -3,11 +3,11 @@ import type { IconType } from "react-icons";
 
 export type listSkills = {
   name: string;
-  icon: ReactElement<IconType>
-}
+  icon: ReactElement<IconType>;
+};
 
 export type Skills = {
-  listSkills?: listSkills[]
+  listSkills?: listSkills[];
   variants?: {
     hidden: {
       opacity: number;
@@ -18,4 +18,12 @@ export type Skills = {
       y: number;
     };
   };
+};
+
+export type ProjectType = {
+  img: string;
+  title: string;
+  description: string;
+  liveDemoLink: string;
+  githubLink: string;
 };

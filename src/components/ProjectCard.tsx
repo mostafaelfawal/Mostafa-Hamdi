@@ -2,6 +2,7 @@
 import { motion } from "framer-motion";
 import { FaGithub } from "react-icons/fa";
 import { FaShareFromSquare } from "react-icons/fa6";
+import type { ProjectType } from "../types";
 
 export default function ProjectCard({
   img,
@@ -9,13 +10,7 @@ export default function ProjectCard({
   description,
   liveDemoLink,
   githubLink,
-}: {
-  img: string;
-  title: string;
-  description: string;
-  liveDemoLink: string;
-  githubLink: string;
-}) {
+}: ProjectType) {
   return (
     <motion.article
       className="bg-white dark:bg-slate-700 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow flex flex-col"
@@ -24,7 +19,12 @@ export default function ProjectCard({
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.3 }}
     >
-      <img onClick={() => window.open(liveDemoLink, "_blank")} className="cursor-pointer w-full h-48 object-cover" src={img} alt={title} />
+      <img
+        onClick={() => window.open(liveDemoLink, "_blank")}
+        className="cursor-pointer w-full h-48 object-cover"
+        src={img}
+        alt={title}
+      />
       <div className="p-6 flex flex-col flex-grow">
         <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
           {title}
