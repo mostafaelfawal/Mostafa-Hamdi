@@ -55,6 +55,13 @@ export default function Projects() {
           liveDemoLink="https://my-todo-phi-one.vercel.app/"
           githubLink="https://github.com/mostafaelfawal/Todo"
         />
+        <ProjectCard
+          img="/images/Estate landing page.png"
+          title="Estate landing page"
+          description="Cartoon-style Todo List App with CRUD, filters, and Local Storage"
+          liveDemoLink="https://amjaad-estate-lading.vercel.app/"
+          githubLink="https://github.com/mostafaelfawal/Amjaad-Lading-Page"
+        />
       </motion.div>
     </section>
   );
