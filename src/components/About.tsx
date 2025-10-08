@@ -23,9 +23,13 @@ import {
   SiAxios,
   SiVite,
   SiFirebase,
+  SiMui,
+  SiJest,
+  SiTestinglibrary,
 } from "react-icons/si";
 import type { listSkills } from "../types";
 import SkillsContainer from "./SkillsContainer";
+import { TbBrandFramerMotion } from "react-icons/tb";
 
 const container = {
   hidden: { opacity: 0 },
@@ -64,6 +68,10 @@ export default function About() {
     { name: "Postman", icon: <SiPostman className="text-orange-500" /> },
     { name: "Axios", icon: <SiAxios className="text-purple-500" /> },
     { name: "Redux", icon: <SiRedux className="text-purple-700" /> },
+    { name: "MUI", icon: <SiMui className="text-blue-500"/> },
+    { name: "FramerMotion", icon: <TbBrandFramerMotion className="text-red-400"/> },
+    { name: "Jest", icon: <SiJest className="text-red-500"/> },
+    { name: "Testing Lib", icon: <SiTestinglibrary className="text-red-700"/> }
   ];
 
   const softSkills: listSkills[] = [
@@ -170,3 +178,32 @@ export default function About() {
     </section>
   );
 }
+
+// Languages & Tools
+// HTML
+// CSS
+// JavaScript
+// TypeScript
+// React.js
+// TailwindCSS
+// Vite
+// Firebase
+// Git/GitHub
+// Vercel
+// Next.js
+// Python
+// -------------------
+// Developer Tools
+// VS Code
+// Postman
+// Axios
+// Redux
+// MUI
+// Framer Motion
+// Jest
+// Testing Lib
+// -------------------
+// Soft Skills
+// Problem-Solving
+// Teamwork
+// Fast Learning
