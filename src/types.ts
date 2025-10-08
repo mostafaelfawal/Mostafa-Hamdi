@@ -4,6 +4,7 @@ import type { IconType } from "react-icons";
 export type listSkills = {
   name: string;
   icon: ReactElement<IconType>;
+  ratio?: string;
 };
 
 export type Skills = {

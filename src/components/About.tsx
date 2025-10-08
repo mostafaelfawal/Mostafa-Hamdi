@@ -46,41 +46,119 @@ const item = {
 
 export default function About() {
   const languages: listSkills[] = [
-    { name: "HTML", icon: <FaHtml5 className="text-orange-500" /> },
-    { name: "CSS", icon: <FaCss3Alt className="text-blue-500" /> },
-    { name: "JavaScript", icon: <FaJs className="text-yellow-500" /> },
-    { name: "TypeScript", icon: <SiTypescript className="text-blue-600" /> },
-    { name: "React.js", icon: <FaReact className="text-blue-400" /> },
-    { name: "TailwindCSS", icon: <SiTailwindcss className="text-cyan-400" /> },
-    { name: "Vite", icon: <SiVite className="text-purple-500" /> },
-    { name: "Firebase", icon: <SiFirebase className="text-orange-500" /> },
-    { name: "Git/GitHub", icon: <FaGitAlt className="text-red-600" /> },
-    { name: "Vercel", icon: <SiVercel className="text-gray-800" /> },
+    {
+      name: "HTML",
+      icon: <FaHtml5 className="text-orange-500" />,
+      ratio: "100",
+    },
+    {
+      name: "CSS",
+      icon: <FaCss3Alt className="text-blue-500" />,
+      ratio: "100",
+    },
+    {
+      name: "JavaScript",
+      icon: <FaJs className="text-yellow-500" />,
+      ratio: "90",
+    },
+    {
+      name: "TypeScript",
+      icon: <SiTypescript className="text-blue-600" />,
+      ratio: "80",
+    },
+    {
+      name: "React.js",
+      icon: <FaReact className="text-blue-400" />,
+      ratio: "70",
+    },
+    {
+      name: "TailwindCSS",
+      icon: <SiTailwindcss className="text-cyan-400" />,
+      ratio: "100",
+    },
+    {
+      name: "Vite",
+      icon: <SiVite className="text-purple-500" />,
+      ratio: "100",
+    },
+    {
+      name: "Firebase",
+      icon: <SiFirebase className="text-orange-500" />,
+      ratio: "70",
+    },
+    {
+      name: "Git/GitHub",
+      icon: <FaGitAlt className="text-red-600" />,
+      ratio: "100",
+    },
+    {
+      name: "Vercel",
+      icon: <SiVercel className="text-gray-800" />,
+      ratio: "100",
+    },
     {
       name: "Next.js",
       icon: <RiNextjsFill className="dark:text-white text-black" />,
+      ratio: "50",
     },
-    {name: "Python", icon: <FaPython className="text-blue-400"/>}
+    {
+      name: "Python",
+      icon: <FaPython className="text-blue-400" />,
+      ratio: "10",
+    },
   ];
 
   const devTools: listSkills[] = [
-    { name: "VS Code", icon: <BiLogoVisualStudio className="text-blue-500" /> },
-    { name: "Postman", icon: <SiPostman className="text-orange-500" /> },
-    { name: "Axios", icon: <SiAxios className="text-purple-500" /> },
-    { name: "Redux", icon: <SiRedux className="text-purple-700" /> },
-    { name: "MUI", icon: <SiMui className="text-blue-500"/> },
-    { name: "FramerMotion", icon: <TbBrandFramerMotion className="text-red-400"/> },
-    { name: "Jest", icon: <SiJest className="text-red-500"/> },
-    { name: "Testing Lib", icon: <SiTestinglibrary className="text-red-700"/> }
+    {
+      name: "VS Code",
+      icon: <BiLogoVisualStudio className="text-blue-500" />,
+      ratio: "100",
+    },
+    {
+      name: "Postman",
+      icon: <SiPostman className="text-orange-500" />,
+      ratio: "100",
+    },
+    {
+      name: "Axios",
+      icon: <SiAxios className="text-purple-500" />,
+      ratio: "100",
+    },
+    {
+      name: "Redux",
+      icon: <SiRedux className="text-purple-700" />,
+      ratio: "100",
+    },
+    { name: "MUI", icon: <SiMui className="text-blue-500" />, ratio: "100" },
+    {
+      name: "FramerMotion",
+      icon: <TbBrandFramerMotion className="text-red-400" />,
+      ratio: "100",
+    },
+    { name: "Jest", icon: <SiJest className="text-red-500" />, ratio: "0" },
+    {
+      name: "Testing Lib",
+      icon: <SiTestinglibrary className="text-red-700" />,
+      ratio: "0",
+    },
   ];
 
   const softSkills: listSkills[] = [
     {
       name: "Problem-Solving",
       icon: <MdSyncProblem className="text-yellow-500" />,
+      ratio: "70",
     },
-    { name: "Teamwork", icon: <RiTeamFill className="text-green-500" /> },
-    { name: "Fast Learning", icon: <FaBrain className="text-blue-500" /> },
+    {
+      name: "Teamwork",
+      icon: <RiTeamFill className="text-green-500" />,
+      ratio: "0",
+    },
+    {
+      name: "Fast Learning",
+      icon: <FaBrain className="text-blue-500" />,
+      ratio: "100",
+    },
   ];
 
   return (
