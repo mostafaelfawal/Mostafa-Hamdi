@@ -41,7 +41,7 @@ export default function ProjectCard({
           <motion.button
             whileHover={{ scale: 1.1 }}
             onClick={() => window.open(liveDemoLink, "_blank")}
-            className="flex items-center gap-2 px-4 py-2 bg-primary-light text-white rounded-lg text-sm hover:bg-primary transition-colors"
+            className="min-w-fit flex items-center gap-2 px-4 py-2 bg-primary-light text-white rounded-lg text-sm hover:bg-primary transition-colors"
           >
             <FaShareFromSquare />
             {t("live_demo")}
@@ -49,7 +49,7 @@ export default function ProjectCard({
           <motion.button
             whileHover={{ scale: 1.1 }}
             onClick={() => window.open(githubLink, "_blank")}
-            className="flex items-center gap-2 px-4 py-2 border border-gray-300 dark:border-gray-600 text-gray-600 dark:text-gray-300 rounded-lg text-sm hover:bg-gray-50 dark:hover:bg-slate-600 transition-colors"
+            className="min-w-fit flex items-center gap-2 px-4 py-2 border border-gray-300 dark:border-gray-600 text-gray-600 dark:text-gray-300 rounded-lg text-sm hover:bg-gray-50 dark:hover:bg-slate-600 transition-colors"
           >
             <FaGithub /> {t("contact_github_label")}
           </motion.button>
