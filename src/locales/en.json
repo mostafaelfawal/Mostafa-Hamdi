@@ -1,0 +1,40 @@
+{
+  "name": "Mostafa",
+  "home": "Home",
+  "about": "About",
+  "projects": "Projects",
+  "contact": "Contact",
+
+  "full_name": "Mostafa Hamdi",
+  "hy": "Hi, I'm",
+  "jop": "Front-End Developer",
+  "jop_description": "Building modern, scalable, and high-performance web applications with",
+
+  "about_title": "About Me",
+  "about_description": "Passionate front-end developer with expertise in modern web technologies and a keen eye for design.",
+  "about_description1": "I’m a Front-End Developer passionate about creating modern, responsive, and high-performance web applications. I specialize in",
+  "about_description2": "Always eager to learn and improve, I focus on building clean code and delivering great user experiences.",
+  "about_text": "I’m a Front-End Developer passionate about creating modern, responsive, and high-performance web applications. I specialize in Next.js, React.js, TypeScript, and TailwindCSS. Always eager to learn and improve, I focus on building clean code and delivering great user experiences.",
+
+  "languages_tools": "Languages & Tools",
+  "developer_tools": "Developer Tools",
+  "soft_skills": "Soft Skills",
+
+  "projects_title": "Featured Projects",
+  "projects_description": "A collection of my recent work showcasing different aspects of front-end development.",
+  "live_demo": "Live Demo",
+
+  "contact_title": "Get In Touch",
+  "contact_subtitle": "Ready to work together? Let's discuss your next project.",
+  "contact_name": "Name",
+  "contact_email": "Email",
+  "contact_message": "Message",
+  "contact_send": "Send Message",
+  "contact_success": "✅ Message sent successfully! Nice to meet you",
+  "contact_error": "❌ Failed to send message, try again later.",
+  "contact_email_label": "Email",
+  "contact_linkedin_label": "LinkedIn",
+  "contact_github_label": "GitHub",
+
+  "copyright": "All rights reserved"
+}

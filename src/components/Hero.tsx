@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 const parentVariants = {
   hidden: { opacity: 0, y: 20 },
@@ -20,6 +21,8 @@ const childVariants = {
 };
 
 export default function Hero() {
+  const { t } = useTranslation();
+
   return (
     <motion.section
       id="Home"
@@ -29,21 +32,20 @@ export default function Hero() {
       animate="visible"
     >
       <motion.div
-        className="md:text-left text-center max-w-xl space-y-4"
+        className="text-center max-w-xl space-y-4"
         variants={childVariants}
       >
         <h1 className="mt-5 text-4xl md:text-6xl font-bold text-gray-900 dark:text-white leading-tight">
-          Hi, I'm <span className="text-primary">Mostafa Hamdi</span>
+          {t("hy")} <span className="text-primary">{t("full_name")}</span>
         </h1>
         <h2 className="text-2xl md:text-3xl font-semibold text-gray-800 dark:text-gray-200">
-          Front-End Developer
+          {t("jop")}
         </h2>
         <p className="text-gray-600 dark:text-gray-400 text-lg">
-          Building modern, scalable, and high-performance web applications{" "}
-          <br />
-          with <span className="text-primary font-medium">Next.js</span>,{" "}
+          {t("jop_description")}
+          <span className="text-primary font-medium">Next.js</span>,{" "}
           <span className="text-primary font-medium">TypeScript</span>,{" "}
-          <span className="text-primary font-medium">TailwindCSS</span> &{" "}
+          <span className="text-primary font-medium">TailwindCSS</span>{" "}
           <span className="text-primary font-medium">React.js</span>.
         </p>
       </motion.div>

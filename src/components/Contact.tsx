@@ -2,8 +2,11 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
+import { useTranslation } from "react-i18next";
 
 export default function Contact() {
+  const { t } = useTranslation();
+
   const [form, setForm] = useState({ name: "", email: "", message: "" });
   const [errors, setErrors] = useState<{ [key: string]: boolean }>({});
   const [success, setSuccess] = useState("");
@@ -12,7 +15,6 @@ export default function Contact() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    // التحقق من الحقول
     const newErrors: { [key: string]: boolean } = {};
     if (!form.name) newErrors.name = true;
     if (!form.email) newErrors.email = true;
@@ -21,7 +23,6 @@ export default function Contact() {
 
     if (Object.keys(newErrors).length > 0) return;
 
-    // إرسال البيانات إلى Formspree
     try {
       setLoading(true);
       const res = await fetch("https://formspree.io/f/xblzydvr", {
@@ -31,14 +32,14 @@ export default function Contact() {
       });
 
       if (res.ok) {
-        setSuccess("✅ Message sent successfully! Nice to meet you");
+        setSuccess(t("contact_success"));
         setForm({ name: "", email: "", message: "" });
       } else {
-        setSuccess("❌ Failed to send message, try again later.");
+        setSuccess(t("contact_error"));
       }
       setLoading(false);
     } catch {
-      setSuccess("❌ Failed to send message, try again later.");
+      setSuccess(t("contact_error"));
       setLoading(false);
     }
   };
@@ -48,6 +49,24 @@ export default function Contact() {
   ) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
+
+  const contactItems = [
+    {
+      icon: <FaEnvelope />,
+      title: t("contact_email_label"),
+      value: "armostafa982@gmail.com",
+    },
+    {
+      icon: <FaLinkedin />,
+      title: t("contact_linkedin_label"),
+      value: "linkedin.com/in/mostafa-hamdi-75044334b",
+    },
+    {
+      icon: <FaGithub />,
+      title: t("contact_github_label"),
+      value: "github.com/mostafaelfawal",
+    },
+  ];
 
   return (
     <section className="py-20 flex justify-center items-center" id="Contact">
@@ -61,10 +80,10 @@ export default function Contact() {
           viewport={{ once: true }}
         >
           <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
-            Get In Touch
+            {t("contact_title")}
           </h2>
           <p className="text-xl text-gray-600 dark:text-gray-400">
-            Ready to work together? Let's discuss your next project.
+            {t("contact_subtitle")}
           </p>
         </motion.div>
 
@@ -78,23 +97,7 @@ export default function Contact() {
             viewport={{ once: true }}
           >
             <div className="space-y-6">
-              {[
-                {
-                  icon: <FaEnvelope />,
-                  title: "Email",
-                  value: "armostafa982@gmail.com",
-                },
-                {
-                  icon: <FaLinkedin />,
-                  title: "LinkedIn",
-                  value: "linkedin.com/in/mostafa-hamdi-75044334b",
-                },
-                {
-                  icon: <FaGithub />,
-                  title: "GitHub",
-                  value: "github.com/mostafaelfawal",
-                },
-              ].map((item, idx) => (
+              {contactItems.map((item, idx) => (
                 <motion.div
                   key={idx}
                   className="flex items-center space-x-4"
@@ -135,7 +138,7 @@ export default function Contact() {
               transition={{ duration: 0.4 }}
             >
               <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                Name
+                {t("contact_name")}
               </label>
               <input
                 type="text"
@@ -156,7 +159,7 @@ export default function Contact() {
               transition={{ duration: 0.4 }}
             >
               <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                Email
+                {t("contact_email")}
               </label>
               <input
                 type="email"
@@ -177,7 +180,7 @@ export default function Contact() {
               transition={{ duration: 0.4 }}
             >
               <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                Message
+                {t("contact_message")}
               </label>
               <textarea
                 rows={4}
@@ -191,6 +194,7 @@ export default function Contact() {
                 } rounded-lg bg-white dark:bg-slate-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition`}
               ></textarea>
             </motion.div>
+
             <div className="relative">
               <motion.button
                 type="submit"
@@ -202,7 +206,7 @@ export default function Contact() {
                 {loading ? (
                   <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 size-5 rounded-full border-2 border-black border-t-transparent animate-spin"></div>
                 ) : (
-                  "Send Message"
+                  t("contact_send")
                 )}
               </motion.button>
             </div>

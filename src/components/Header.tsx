@@ -1,17 +1,32 @@
 import { useState } from "react";
 import { FaSun, FaMoon, FaBars, FaTimes } from "react-icons/fa";
 import { motion } from "framer-motion";
+import { HiLanguage } from "react-icons/hi2";
+import { useTranslation } from "react-i18next";
 
 export default function Header() {
   const [theme, setTheme] = useState<boolean>(true);
+  const [language, setlanguage] = useState<"en" | "ar">("en");
   const [isOpen, setIsOpen] = useState<boolean>(false);
+  const { t, i18n } = useTranslation();
 
   const toggleTheme = () => {
     document.documentElement.classList.toggle("dark");
     setTheme(!theme);
   };
 
-  const navLinks = ["Home", "About", "Projects", "Contact"];
+  const toggleLanguage = () => {
+    const newLang = language === "en" ? "ar" : "en";
+    setlanguage(newLang);
+    i18n.changeLanguage(newLang);
+    document.documentElement.setAttribute(
+      "dir",
+      newLang === "ar" ? "rtl" : "ltr"
+    );
+    document.documentElement.setAttribute("lang", newLang);
+  };
+
+  const navLinks = [t("home"), t("about"), t("projects"), t("contact")];
 
   const handleScroll = (id: string) => {
     const section = document.getElementById(id);
@@ -31,7 +46,8 @@ export default function Header() {
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.6 }}
       >
-        Mostafa<span className="text-primary">.</span>
+        {t("name")}
+        <span className="text-primary">.</span>
       </motion.a>
 
       {/* Desktop Nav */}
@@ -68,7 +84,13 @@ export default function Header() {
         >
           {theme ? <FaSun /> : <FaMoon />}
         </motion.button>
-
+        {/* toggle language */}
+        <button
+          onClick={toggleLanguage}
+          className="p-2 rounded-full text-yellow-700 dark:text-yellow-600 hover:bg-yellow-200/50 dark:hover:bg-yellow-500/50 transition-colors duration-300"
+        >
+          <HiLanguage />
+        </button>
         {/* Hamburger Button */}
         <button
           className="md:hidden text-gray-700 dark:text-gray-300 text-2xl"

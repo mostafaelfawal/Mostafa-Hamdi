@@ -2,6 +2,7 @@
 import { motion } from "framer-motion";
 import ProjectCard from "./ProjectCard";
 import type { ProjectType } from "../types";
+import { useTranslation } from "react-i18next";
 
 const container = {
   hidden: { opacity: 0 },
@@ -12,6 +13,8 @@ const container = {
 };
 
 export default function Projects() {
+  const { t } = useTranslation();
+
   const projects: ProjectType[] = [
     {
       img: "/images/E-commerce.png",
@@ -56,11 +59,10 @@ export default function Projects() {
         transition={{ duration: 0.8 }}
       >
         <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
-          Featured Projects
+          {t("projects_title")}
         </h2>
         <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
-          A collection of my recent work showcasing different aspects of
-          front-end development.
+          {t("projects_description")}
         </p>
       </motion.div>
 

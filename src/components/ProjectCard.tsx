@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { FaGithub } from "react-icons/fa";
 import { FaShareFromSquare } from "react-icons/fa6";
 import type { ProjectType } from "../types";
+import { useTranslation } from "react-i18next";
 
 export default function ProjectCard({
   img,
@@ -11,6 +12,7 @@ export default function ProjectCard({
   liveDemoLink,
   githubLink,
 }: ProjectType) {
+  const { t } = useTranslation()
   return (
     <motion.article
       className="bg-white dark:bg-slate-700 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow flex flex-col"
@@ -39,14 +41,14 @@ export default function ProjectCard({
             className="flex items-center gap-2 px-4 py-2 bg-primary-light text-white rounded-lg text-sm hover:bg-primary transition-colors"
           >
             <FaShareFromSquare />
-            Live Demo
+            {t("live_demo")}
           </motion.button>
           <motion.button
             whileHover={{ scale: 1.1 }}
             onClick={() => window.open(githubLink, "_blank")}
             className="flex items-center gap-2 px-4 py-2 border border-gray-300 dark:border-gray-600 text-gray-600 dark:text-gray-300 rounded-lg text-sm hover:bg-gray-50 dark:hover:bg-slate-600 transition-colors"
           >
-            <FaGithub /> GitHub
+            <FaGithub /> {t("contact_github_label")}
           </motion.button>
         </div>
       </div>

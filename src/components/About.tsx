@@ -30,6 +30,7 @@ import {
 import type { listSkills } from "../types";
 import SkillsContainer from "./SkillsContainer";
 import { TbBrandFramerMotion } from "react-icons/tb";
+import { useTranslation } from "react-i18next";
 
 const container = {
   hidden: { opacity: 0 },
@@ -49,62 +50,50 @@ export default function About() {
     {
       name: "HTML",
       icon: <FaHtml5 className="text-orange-500" />,
-      ratio: "100",
     },
     {
       name: "CSS",
       icon: <FaCss3Alt className="text-blue-500" />,
-      ratio: "100",
     },
     {
       name: "JavaScript",
       icon: <FaJs className="text-yellow-500" />,
-      ratio: "90",
     },
     {
       name: "TypeScript",
       icon: <SiTypescript className="text-blue-600" />,
-      ratio: "80",
     },
     {
       name: "React.js",
       icon: <FaReact className="text-blue-400" />,
-      ratio: "70",
     },
     {
       name: "TailwindCSS",
       icon: <SiTailwindcss className="text-cyan-400" />,
-      ratio: "100",
     },
     {
       name: "Vite",
       icon: <SiVite className="text-purple-500" />,
-      ratio: "100",
     },
     {
       name: "Firebase",
       icon: <SiFirebase className="text-orange-500" />,
-      ratio: "70",
     },
     {
       name: "Git/GitHub",
       icon: <FaGitAlt className="text-red-600" />,
-      ratio: "100",
     },
     {
       name: "Vercel",
       icon: <SiVercel className="text-gray-800" />,
-      ratio: "100",
     },
     {
       name: "Next.js",
       icon: <RiNextjsFill className="dark:text-white text-black" />,
-      ratio: "50",
     },
     {
       name: "Python",
       icon: <FaPython className="text-blue-400" />,
-      ratio: "10",
     },
   ];
 
@@ -112,34 +101,28 @@ export default function About() {
     {
       name: "VS Code",
       icon: <BiLogoVisualStudio className="text-blue-500" />,
-      ratio: "100",
     },
     {
       name: "Postman",
       icon: <SiPostman className="text-orange-500" />,
-      ratio: "100",
     },
     {
       name: "Axios",
       icon: <SiAxios className="text-purple-500" />,
-      ratio: "100",
     },
     {
       name: "Redux",
       icon: <SiRedux className="text-purple-700" />,
-      ratio: "100",
     },
-    { name: "MUI", icon: <SiMui className="text-blue-500" />, ratio: "100" },
+    { name: "MUI", icon: <SiMui className="text-blue-500" /> },
     {
       name: "FramerMotion",
       icon: <TbBrandFramerMotion className="text-red-400" />,
-      ratio: "100",
     },
-    { name: "Jest", icon: <SiJest className="text-red-500" />, ratio: "0" },
+    { name: "Jest", icon: <SiJest className="text-red-500" /> },
     {
       name: "Testing Lib",
       icon: <SiTestinglibrary className="text-red-700" />,
-      ratio: "0",
     },
   ];
 
@@ -147,24 +130,21 @@ export default function About() {
     {
       name: "Problem-Solving",
       icon: <MdSyncProblem className="text-yellow-500" />,
-      ratio: "70",
     },
     {
       name: "Teamwork",
       icon: <RiTeamFill className="text-green-500" />,
-      ratio: "0",
     },
     {
       name: "Fast Learning",
       icon: <FaBrain className="text-blue-500" />,
-      ratio: "100",
     },
   ];
-
+  const { t } = useTranslation();
   return (
     <section
       id="About"
-      className="max-w-7xl mx-auto px-6 py-16 md:text-left text-center"
+      className="max-w-7xl mx-auto px-6 py-16 text-center"
     >
       {/* Title */}
       <motion.h2
@@ -173,7 +153,7 @@ export default function About() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
       >
-        About Me
+        {t("about_title")}
       </motion.h2>
 
       <motion.p
@@ -182,8 +162,7 @@ export default function About() {
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8, delay: 0.2 }}
       >
-        Passionate front-end developer with expertise in modern web technologies
-        and a keen eye for design.
+        {t("about_description")}
       </motion.p>
 
       <div className="flex flex-col lg:flex-row justify-between mt-10 gap-10 items-center">
@@ -198,14 +177,12 @@ export default function About() {
             className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed"
             variants={item}
           >
-            I’m a Front-End Developer passionate about creating modern,
-            responsive, and high-performance web applications. I specialize in
+            {t("about_description1")}
             <span className="text-primary font-medium"> Next.js</span>,{" "}
             <span className="text-primary font-medium">React.js</span>,{" "}
-            <span className="text-primary font-medium">TypeScript</span>, and{" "}
+            <span className="text-primary font-medium">TypeScript</span>,
             <span className="text-primary font-medium">TailwindCSS</span>.
-            Always eager to learn and improve, I focus on building clean code
-            and delivering great user experiences.
+            {t("about_description2")}
           </motion.p>
 
           {/* Skills Sections */}
@@ -214,7 +191,7 @@ export default function About() {
             <SkillsContainer
               listSkills={languages}
               icon={<FaCode />}
-              name="Languages & Tools"
+              name={t("languages_tools")}
               variants={item}
               color="text-blue-500"
             />
@@ -223,7 +200,7 @@ export default function About() {
             <SkillsContainer
               listSkills={devTools}
               icon={<FaTools />}
-              name="Developer Tools"
+              name={t("developer_tools")}
               variants={item}
               color="text-green-500"
             />
@@ -232,7 +209,7 @@ export default function About() {
             <SkillsContainer
               listSkills={softSkills}
               icon={<FaServer />}
-              name="Soft Skills"
+              name={t("soft_skills")}
               variants={item}
               color="text-yellow-500"
             />
@@ -256,32 +233,3 @@ export default function About() {
     </section>
   );
 }
-
-// Languages & Tools
-// HTML
-// CSS
-// JavaScript
-// TypeScript
-// React.js
-// TailwindCSS
-// Vite
-// Firebase
-// Git/GitHub
-// Vercel
-// Next.js
-// Python
-// -------------------
-// Developer Tools
-// VS Code
-// Postman
-// Axios
-// Redux
-// MUI
-// Framer Motion
-// Jest
-// Testing Lib
-// -------------------
-// Soft Skills
-// Problem-Solving
-// Teamwork
-// Fast Learning

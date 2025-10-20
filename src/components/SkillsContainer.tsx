@@ -21,12 +21,7 @@ export default function SkillsContainer({
       </div>
       <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
         {listSkills!.map((tool) => (
-          <Skill
-            key={tool.name}
-            ratio={tool.ratio}
-            name={tool.name}
-            icon={tool.icon}
-          />
+          <Skill key={tool.name} name={tool.name} icon={tool.icon} />
         ))}
       </div>
     </motion.div>

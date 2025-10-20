@@ -1,8 +1,10 @@
 import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 export default function Footer() {
-  const navLinks = ["Home", "About", "Projects", "Contact"];
+  const { t } = useTranslation();
+  const navLinks = [t("home"), t("about"), t("projects"), t("contact")];
 
   const handleScroll = (id: string) => {
     const section = document.getElementById(id);
@@ -23,7 +25,8 @@ export default function Footer() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          Mostafa<span className="text-primary">.</span>
+          {t("name")}
+          <span className="text-primary">.</span>
         </motion.a>
 
         {/* Navigation Links */}
@@ -82,7 +85,7 @@ export default function Footer() {
 
       {/* Bottom text */}
       <div className="text-center text-sm text-gray-500 dark:text-gray-400 pb-6">
-        © {new Date().getFullYear()} Mostafa Hamdi. All rights reserved.
+        © {new Date().getFullYear()} {t("full_name")}. {t("copyright")}.
       </div>
     </footer>
   );
