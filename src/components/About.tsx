@@ -174,7 +174,7 @@ export default function About() {
           animate="visible"
         >
           <motion.p
-            className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed"
+            className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed md:text-start"
             variants={item}
           >
             {t("about_description1")}

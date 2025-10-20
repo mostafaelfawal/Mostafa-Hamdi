@@ -26,16 +26,16 @@ export default function Hero() {
   return (
     <motion.section
       id="Home"
-      className="flex md:flex-row flex-col-reverse justify-between items-center px-6 max-w-7xl mx-auto mt-12"
+      className="flex md:gap-7 md:flex-row flex-col-reverse justify-between items-center px-6 max-w-7xl mx-auto mt-12"
       variants={parentVariants}
       initial="hidden"
       animate="visible"
     >
       <motion.div
-        className="text-center max-w-xl space-y-4"
+        className="text-center md:text-start max-w-xl space-y-4"
         variants={childVariants}
       >
-        <h1 className="mt-5 text-4xl md:text-6xl font-bold text-gray-900 dark:text-white leading-tight">
+        <h1 className="mt-5 text-4xl md:text-6xl font-bold text-gray-900 dark:text-white leading-tight max-w-143">
           {t("hy")} <span className="text-primary">{t("full_name")}</span>
         </h1>
         <h2 className="text-2xl md:text-3xl font-semibold text-gray-800 dark:text-gray-200">
@@ -52,7 +52,7 @@ export default function Hero() {
 
       <motion.div className="relative" variants={childVariants}>
         <img
-          className="w-72 h-72 rounded-full object-cover border-4 border-white dark:border-gray-800 
+          className="min-w-72 w-72 h-72 rounded-full object-cover border-4 border-white dark:border-gray-800 
           shadow-[0_0_25px_5px_rgba(59,130,246,0.6),0_0_50px_10px_rgba(37,99,235,0.4),0_0_75px_15px_rgba(29,78,216,0.3)]"
           src="/images/7.png"
           alt="mostafa-photo"
