@@ -6,7 +6,7 @@ import { useTranslation } from "react-i18next";
 import { toggleTheme } from "../logic/Toggles/toggleTheme";
 import { toggleLanguage } from "../logic/Toggles/toggleLanguage";
 import { handleScroll } from "../logic/handleScroll";
-import type { LanguageType } from "../types/types";
+import type { LanguageType } from "../types/LanguageType";
 
 export default function Header() {
   const [theme, setTheme] = useState<boolean>(true);

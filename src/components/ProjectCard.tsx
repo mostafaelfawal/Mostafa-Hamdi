@@ -2,8 +2,9 @@
 import { motion } from "framer-motion";
 import { FaGithub } from "react-icons/fa";
 import { FaShareFromSquare } from "react-icons/fa6";
-import type { LanguageType, ProjectType } from "../types/types";
 import { useTranslation } from "react-i18next";
+import type { ProjectType } from "../types/ProjectType";
+import type { LanguageType } from "../types/LanguageType";
 
 export default function ProjectCard({
   img,

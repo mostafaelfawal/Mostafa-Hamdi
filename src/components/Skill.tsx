@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import type { ListSkills, Skills } from "../types/types";
+import type { Skills } from "../types/Skills";
+import type { ListSkills } from "../types/ListSkills";
 
 export default function Skill({ name, icon, variants }: Skills & ListSkills) {
   return (

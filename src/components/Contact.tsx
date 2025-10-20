@@ -3,8 +3,8 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
-import type { FormType } from "../types/types";
 import { handleSendEmail } from "../logic/handleSendEmail";
+import type { FormType } from "../types/FormType";
 
 export default function Contact() {
   const { t } = useTranslation();
