@@ -1,17 +1,11 @@
 import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
+import { handleScroll } from "../logic/handleScroll";
 
 export default function Footer() {
   const { t } = useTranslation();
   const navLinks = [t("home"), t("about"), t("projects"), t("contact")];
-
-  const handleScroll = (id: string) => {
-    const section = document.getElementById(id);
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
-    }
-  };
 
   return (
     <footer className="dark:bg-bg-dark bg-white border-t dark:border-gray-700 mt-20">
