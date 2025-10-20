@@ -1,8 +1,8 @@
 // Projects.tsx
 import { motion } from "framer-motion";
 import ProjectCard from "./ProjectCard";
-import type { ProjectType } from "../types";
 import { useTranslation } from "react-i18next";
+import { projects } from "../data/projects";
 
 const container = {
   hidden: { opacity: 0 },
@@ -14,41 +14,6 @@ const container = {
 
 export default function Projects() {
   const { t } = useTranslation();
-
-  const projects: ProjectType[] = [
-    {
-      img: "/images/E-commerce.png",
-      title: "E-commerce & Admin Dashboard",
-      description:
-        "Modern shopping experience with React and Tailwind integration.",
-      liveDemoLink: "https://store-hub-iota.vercel.app/",
-      githubLink: "https://github.com/mostafaelfawal/StoreHub",
-    },
-    {
-      img: "/images/Estate landing page.png",
-      title: "Estate landing page",
-      description:
-        "Responsive real estate landing page with smooth animations and modern UI.",
-      liveDemoLink: "https://amjaad-estate-lading.vercel.app/",
-      githubLink: "https://github.com/mostafaelfawal/Amjaad-Lading-Page",
-    },
-    {
-      img: "/images/Fylo landing page.png",
-      title: "Fylo Landing Page",
-      description:
-        "Responsive landing page with interactive elements and animations.",
-      liveDemoLink: "https://fylo-ladning-page.vercel.app",
-      githubLink: "https://github.com/mostafaelfawal/Fylo-Ladning-Page",
-    },
-    {
-      img: "/images/TodoList.png",
-      title: "Todo List App",
-      description:
-        "Cartoon-themed Todo app with CRUD, task filters, and persistent data via Local Storage.",
-      liveDemoLink: "https://my-todo-phi-one.vercel.app/",
-      githubLink: "https://github.com/mostafaelfawal/Todo",
-    },
-  ];
 
   return (
     <section id="Projects" className="py-16 max-w-7xl mx-auto px-6">

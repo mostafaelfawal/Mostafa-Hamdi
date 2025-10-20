@@ -12,7 +12,9 @@ export default function ProjectCard({
   liveDemoLink,
   githubLink,
 }: ProjectType) {
-  const { t } = useTranslation()
+  const { i18n, t } = useTranslation();
+  const lang = i18n.language;
+
   return (
     <motion.article
       className="bg-white dark:bg-slate-700 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow flex flex-col"
@@ -25,14 +27,14 @@ export default function ProjectCard({
         onClick={() => window.open(liveDemoLink, "_blank")}
         className="cursor-pointer w-full h-48 object-cover"
         src={img}
-        alt={title}
+        alt={title[lang as "en" | "ar"]}
       />
       <div className="p-6 flex flex-col flex-grow">
         <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
-          {title}
+          {title[lang as "en" | "ar"]}
         </h3>
         <p className="text-gray-600 dark:text-gray-400 mb-4 flex-grow">
-          {description}
+          {description[lang as "en" | "ar"]}
         </p>
         <div className="flex space-x-4 mt-auto">
           <motion.button

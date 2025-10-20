@@ -1,36 +1,7 @@
 import { motion } from "framer-motion";
-import { BiLogoVisualStudio } from "react-icons/bi";
-import {
-  FaHtml5,
-  FaCss3Alt,
-  FaJs,
-  FaReact,
-  FaGitAlt,
-  FaServer,
-  FaTools,
-  FaCode,
-  FaBrain,
-  FaPython,
-} from "react-icons/fa";
-import { MdSyncProblem } from "react-icons/md";
-import { RiNextjsFill, RiTeamFill } from "react-icons/ri";
-import {
-  SiTailwindcss,
-  SiTypescript,
-  SiPostman,
-  SiRedux,
-  SiVercel,
-  SiAxios,
-  SiVite,
-  SiFirebase,
-  SiMui,
-  SiJest,
-  SiTestinglibrary,
-} from "react-icons/si";
-import type { listSkills } from "../types";
 import SkillsContainer from "./SkillsContainer";
-import { TbBrandFramerMotion } from "react-icons/tb";
 import { useTranslation } from "react-i18next";
+import { skillsContainer } from "../data/skillsContainers";
 
 const container = {
   hidden: { opacity: 0 },
@@ -46,106 +17,9 @@ const item = {
 };
 
 export default function About() {
-  const languages: listSkills[] = [
-    {
-      name: "HTML",
-      icon: <FaHtml5 className="text-orange-500" />,
-    },
-    {
-      name: "CSS",
-      icon: <FaCss3Alt className="text-blue-500" />,
-    },
-    {
-      name: "JavaScript",
-      icon: <FaJs className="text-yellow-500" />,
-    },
-    {
-      name: "TypeScript",
-      icon: <SiTypescript className="text-blue-600" />,
-    },
-    {
-      name: "React.js",
-      icon: <FaReact className="text-blue-400" />,
-    },
-    {
-      name: "TailwindCSS",
-      icon: <SiTailwindcss className="text-cyan-400" />,
-    },
-    {
-      name: "Vite",
-      icon: <SiVite className="text-purple-500" />,
-    },
-    {
-      name: "Firebase",
-      icon: <SiFirebase className="text-orange-500" />,
-    },
-    {
-      name: "Git/GitHub",
-      icon: <FaGitAlt className="text-red-600" />,
-    },
-    {
-      name: "Vercel",
-      icon: <SiVercel className="text-gray-800" />,
-    },
-    {
-      name: "Next.js",
-      icon: <RiNextjsFill className="dark:text-white text-black" />,
-    },
-    {
-      name: "Python",
-      icon: <FaPython className="text-blue-400" />,
-    },
-  ];
-
-  const devTools: listSkills[] = [
-    {
-      name: "VS Code",
-      icon: <BiLogoVisualStudio className="text-blue-500" />,
-    },
-    {
-      name: "Postman",
-      icon: <SiPostman className="text-orange-500" />,
-    },
-    {
-      name: "Axios",
-      icon: <SiAxios className="text-purple-500" />,
-    },
-    {
-      name: "Redux",
-      icon: <SiRedux className="text-purple-700" />,
-    },
-    { name: "MUI", icon: <SiMui className="text-blue-500" /> },
-    {
-      name: "FramerMotion",
-      icon: <TbBrandFramerMotion className="text-red-400" />,
-    },
-    { name: "Jest", icon: <SiJest className="text-red-500" /> },
-    {
-      name: "Testing Lib",
-      icon: <SiTestinglibrary className="text-red-700" />,
-    },
-  ];
-
-  const softSkills: listSkills[] = [
-    {
-      name: "Problem-Solving",
-      icon: <MdSyncProblem className="text-yellow-500" />,
-    },
-    {
-      name: "Teamwork",
-      icon: <RiTeamFill className="text-green-500" />,
-    },
-    {
-      name: "Fast Learning",
-      icon: <FaBrain className="text-blue-500" />,
-    },
-  ];
   const { t } = useTranslation();
   return (
-    <section
-      id="About"
-      className="max-w-7xl mx-auto px-6 py-16 text-center"
-    >
+    <section id="About" className="max-w-7xl mx-auto px-6 py-16 text-center">
       {/* Title */}
       <motion.h2
         className="text-center text-4xl font-bold text-gray-900 dark:text-white mb-4"
@@ -187,32 +61,16 @@ export default function About() {
 
           {/* Skills Sections */}
           <div className="space-y-6">
-            {/* Languages & Tools */}
-            <SkillsContainer
-              listSkills={languages}
-              icon={<FaCode />}
-              name={t("languages_tools")}
-              variants={item}
-              color="text-blue-500"
-            />
-
-            {/* Developer Tools */}
-            <SkillsContainer
-              listSkills={devTools}
-              icon={<FaTools />}
-              name={t("developer_tools")}
-              variants={item}
-              color="text-green-500"
-            />
-
-            {/* Soft Skills */}
-            <SkillsContainer
-              listSkills={softSkills}
-              icon={<FaServer />}
-              name={t("soft_skills")}
-              variants={item}
-              color="text-yellow-500"
-            />
+            {skillsContainer.map((s, i) => (
+              <SkillsContainer
+                key={i}
+                listSkills={s.listSkills}
+                icon={s.icon}
+                name={t(s.name)}
+                color={s.color}
+                variants={item}
+              />
+            ))}
           </div>
         </motion.div>
 

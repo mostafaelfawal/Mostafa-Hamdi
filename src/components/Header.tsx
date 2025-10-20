@@ -3,38 +3,17 @@ import { FaSun, FaMoon, FaBars, FaTimes } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { HiLanguage } from "react-icons/hi2";
 import { useTranslation } from "react-i18next";
+import { toggleTheme } from "../logic/Toggles/toggleTheme";
+import { toggleLanguage } from "../logic/Toggles/toggleLanguage";
+import { handleScroll } from "../logic/handleScroll";
 
 export default function Header() {
   const [theme, setTheme] = useState<boolean>(true);
-  const [language, setlanguage] = useState<"en" | "ar">("en");
-  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [language, setLanguage] = useState<"en" | "ar">("en");
+  const [menuOpen, setMenuOpen] = useState<boolean>(false);
   const { t, i18n } = useTranslation();
 
-  const toggleTheme = () => {
-    document.documentElement.classList.toggle("dark");
-    setTheme(!theme);
-  };
-
-  const toggleLanguage = () => {
-    const newLang = language === "en" ? "ar" : "en";
-    setlanguage(newLang);
-    i18n.changeLanguage(newLang);
-    document.documentElement.setAttribute(
-      "dir",
-      newLang === "ar" ? "rtl" : "ltr"
-    );
-    document.documentElement.setAttribute("lang", newLang);
-  };
-
   const navLinks = [t("home"), t("about"), t("projects"), t("contact")];
-
-  const handleScroll = (id: string) => {
-    const section = document.getElementById(id);
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
-      setIsOpen(false); // يقفل المينيو بعد الضغط
-    }
-  };
 
   return (
     <header className="sticky top-0 dark:bg-bg-dark bg-white max-w-7xl mx-auto px-6 py-4 flex justify-between items-center dark:border-b dark:border-b-gray-600 shadow-md z-50">
@@ -63,7 +42,7 @@ export default function Header() {
         {navLinks.map((link, idx) => (
           <motion.button
             key={idx}
-            onClick={() => handleScroll(link)}
+            onClick={() => handleScroll(link, setMenuOpen)}
             className="bg-transparent border-none text-gray-600 dark:text-gray-300 hover:text-primary-light transition-colors"
             variants={{
               hidden: { opacity: 0, y: -10 },
@@ -78,7 +57,7 @@ export default function Header() {
       <div className="flex items-center gap-4">
         {/* Theme toggle */}
         <motion.button
-          onClick={toggleTheme}
+          onClick={() => toggleTheme(setTheme, theme)}
           className="p-2 rounded-full bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors"
           whileTap={{ rotate: 180, scale: 0.8 }}
         >
@@ -86,7 +65,7 @@ export default function Header() {
         </motion.button>
         {/* toggle language */}
         <button
-          onClick={toggleLanguage}
+          onClick={() => toggleLanguage(language, setLanguage, i18n)}
           className="p-2 rounded-full text-yellow-700 dark:text-yellow-600 hover:bg-yellow-200/50 dark:hover:bg-yellow-500/50 transition-colors duration-300"
         >
           <HiLanguage />
@@ -94,14 +73,14 @@ export default function Header() {
         {/* Hamburger Button */}
         <button
           className="md:hidden text-gray-700 dark:text-gray-300 text-2xl"
-          onClick={() => setIsOpen(!isOpen)}
+          onClick={() => setMenuOpen(!menuOpen)}
         >
-          {isOpen ? <FaTimes /> : <FaBars />}
+          {menuOpen ? <FaTimes /> : <FaBars />}
         </button>
       </div>
 
       {/* Mobile Nav */}
-      {isOpen && (
+      {menuOpen && (
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -110,7 +89,7 @@ export default function Header() {
           {navLinks.map((link, idx) => (
             <button
               key={idx}
-              onClick={() => handleScroll(link)}
+              onClick={() => handleScroll(link, setMenuOpen)}
               className="text-gray-700 dark:text-gray-300 hover:text-primary-light transition-colors text-lg"
             >
               {link}
