@@ -6,10 +6,11 @@ import { useTranslation } from "react-i18next";
 import { toggleTheme } from "../logic/Toggles/toggleTheme";
 import { toggleLanguage } from "../logic/Toggles/toggleLanguage";
 import { handleScroll } from "../logic/handleScroll";
+import type { LanguageType } from "../types/types";
 
 export default function Header() {
   const [theme, setTheme] = useState<boolean>(true);
-  const [language, setLanguage] = useState<"en" | "ar">("en");
+  const [language, setLanguage] = useState<LanguageType>("en");
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
   const { t, i18n } = useTranslation();
 

@@ -1,4 +1,4 @@
-import type { listSkills } from "../types";
+import type { listSkills } from "../types/types";
 import { BiLogoVisualStudio } from "react-icons/bi";
 import {
   SiAxios,
@@ -38,4 +38,3 @@ export const devTools: listSkills[] = [
     icon: <SiTestinglibrary className="text-red-700" />,
   },
 ];
-

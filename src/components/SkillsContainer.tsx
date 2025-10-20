@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import type { listSkills, Skills } from "../types";
+import type { ListSkills, Skills } from "../types/types";
 import Skill from "./Skill";
 
 export default function SkillsContainer({
@@ -8,7 +8,7 @@ export default function SkillsContainer({
   listSkills,
   variants,
   color,
-}: Skills & listSkills & { color: string }) {
+}: Skills & ListSkills & { color: string }) {
   return (
     <motion.div
       className="bg-gray-100 dark:bg-gray-800 rounded-xl p-4 shadow-lg"

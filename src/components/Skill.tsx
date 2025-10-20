@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
-import type { listSkills, Skills } from "../types";
+import type { ListSkills, Skills } from "../types/types";
 
-export default function Skill({ name, icon, variants }: Skills & listSkills) {
+export default function Skill({ name, icon, variants }: Skills & ListSkills) {
   return (
     <motion.article
       key={name}

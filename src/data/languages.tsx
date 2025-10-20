@@ -1,6 +1,19 @@
-import { FaCss3Alt, FaGitAlt, FaHtml5, FaJs, FaPython, FaReact } from "react-icons/fa";
-import type { listSkills } from "../types";
-import { SiFirebase, SiTailwindcss, SiTypescript, SiVercel, SiVite } from "react-icons/si";
+import {
+  FaCss3Alt,
+  FaGitAlt,
+  FaHtml5,
+  FaJs,
+  FaPython,
+  FaReact,
+} from "react-icons/fa";
+import type { listSkills } from "../types/types";
+import {
+  SiFirebase,
+  SiTailwindcss,
+  SiTypescript,
+  SiVercel,
+  SiVite,
+} from "react-icons/si";
 import { RiNextjsFill } from "react-icons/ri";
 
 export const languages: listSkills[] = [

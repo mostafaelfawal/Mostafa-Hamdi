@@ -3,46 +3,20 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
+import type { FormType } from "../types/types";
+import { handleSendEmail } from "../logic/handleSendEmail";
 
 export default function Contact() {
   const { t } = useTranslation();
 
-  const [form, setForm] = useState({ name: "", email: "", message: "" });
+  const [form, setForm] = useState<FormType>({
+    name: "",
+    email: "",
+    message: "",
+  });
   const [errors, setErrors] = useState<{ [key: string]: boolean }>({});
   const [success, setSuccess] = useState("");
   const [loading, setLoading] = useState(false);
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-
-    const newErrors: { [key: string]: boolean } = {};
-    if (!form.name) newErrors.name = true;
-    if (!form.email) newErrors.email = true;
-    if (!form.message) newErrors.message = true;
-    setErrors(newErrors);
-
-    if (Object.keys(newErrors).length > 0) return;
-
-    try {
-      setLoading(true);
-      const res = await fetch("https://formspree.io/f/xblzydvr", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
-      });
-
-      if (res.ok) {
-        setSuccess(t("contact_success"));
-        setForm({ name: "", email: "", message: "" });
-      } else {
-        setSuccess(t("contact_error"));
-      }
-      setLoading(false);
-    } catch {
-      setSuccess(t("contact_error"));
-      setLoading(false);
-    }
-  };
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -125,7 +99,17 @@ export default function Contact() {
 
           {/* Form */}
           <motion.form
-            onSubmit={handleSubmit}
+            onSubmit={(e) =>
+              handleSendEmail({
+                e,
+                form,
+                setErrors,
+                setSuccess,
+                setLoading,
+                setForm,
+                t,
+              })
+            }
             className="space-y-6"
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}

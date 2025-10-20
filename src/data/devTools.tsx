@@ -1,5 +1,5 @@
 import { MdSyncProblem } from "react-icons/md";
-import type { listSkills } from "../types";
+import type { listSkills } from "../types/types";
 import { RiTeamFill } from "react-icons/ri";
 import { FaBrain } from "react-icons/fa";
 

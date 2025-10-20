@@ -2,7 +2,7 @@
 import { motion } from "framer-motion";
 import { FaGithub } from "react-icons/fa";
 import { FaShareFromSquare } from "react-icons/fa6";
-import type { ProjectType } from "../types";
+import type { LanguageType, ProjectType } from "../types/types";
 import { useTranslation } from "react-i18next";
 
 export default function ProjectCard({
@@ -27,14 +27,14 @@ export default function ProjectCard({
         onClick={() => window.open(liveDemoLink, "_blank")}
         className="cursor-pointer w-full h-48 object-cover"
         src={img}
-        alt={title[lang as "en" | "ar"]}
+        alt={title[lang as LanguageType]}
       />
       <div className="p-6 flex flex-col flex-grow">
         <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
-          {title[lang as "en" | "ar"]}
+          {title[lang as LanguageType]}
         </h3>
         <p className="text-gray-600 dark:text-gray-400 mb-4 flex-grow">
-          {description[lang as "en" | "ar"]}
+          {description[lang as LanguageType]}
         </p>
         <div className="flex space-x-4 mt-auto">
           <motion.button
