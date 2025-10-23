@@ -1,4 +1,4 @@
-import type { FormType } from "../types/types";
+import type { FormType } from "../types/FormType";
 
 type SendEmailParams = {
   e: React.FormEvent;

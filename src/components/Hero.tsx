@@ -25,7 +25,7 @@ export default function Hero() {
 
   return (
     <motion.section
-      id="Home"
+      id={t("home")}
       className="flex md:gap-7 md:flex-row flex-col-reverse justify-between items-center px-6 max-w-7xl mx-auto mt-12"
       variants={parentVariants}
       initial="hidden"

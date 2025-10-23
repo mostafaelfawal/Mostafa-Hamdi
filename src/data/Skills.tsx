@@ -1,20 +1,17 @@
-import type { listSkills } from "../types/types";
-import { BiLogoVisualStudio } from "react-icons/bi";
+import type { ListSkills } from "../types/ListSkills";
 import {
   SiAxios,
   SiJest,
   SiMui,
   SiPostman,
+  SiReacthookform,
   SiRedux,
   SiTestinglibrary,
+  SiZod,
 } from "react-icons/si";
 import { TbBrandFramerMotion } from "react-icons/tb";
 
-export const devTools: listSkills[] = [
-  {
-    name: "VS Code",
-    icon: <BiLogoVisualStudio className="text-blue-500" />,
-  },
+export const devTools: ListSkills[] = [
   {
     name: "Postman",
     icon: <SiPostman className="text-orange-500" />,
@@ -36,5 +33,13 @@ export const devTools: listSkills[] = [
   {
     name: "Testing Lib",
     icon: <SiTestinglibrary className="text-red-700" />,
+  },
+  {
+    name: "Zod",
+    icon: <SiZod className="text-blue-400" />,
+  },
+  {
+    name: "Hook-form",
+    icon: <SiReacthookform className="text-red-500" />,
   },
 ];

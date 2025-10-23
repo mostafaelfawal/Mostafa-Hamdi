@@ -43,7 +43,7 @@ export default function Contact() {
   ];
 
   return (
-    <section className="py-20 flex justify-center items-center" id="Contact">
+    <section id={t("contact")} className="py-20 flex justify-center items-center" >
       <div>
         {/* Title */}
         <motion.div

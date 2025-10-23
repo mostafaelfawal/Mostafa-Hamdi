@@ -6,7 +6,7 @@ import {
   FaPython,
   FaReact,
 } from "react-icons/fa";
-import type { listSkills } from "../types/types";
+import type { ListSkills } from "../types/ListSkills";
 import {
   SiFirebase,
   SiTailwindcss,
@@ -16,7 +16,7 @@ import {
 } from "react-icons/si";
 import { RiNextjsFill } from "react-icons/ri";
 
-export const languages: listSkills[] = [
+export const languages: ListSkills[] = [
   {
     name: "HTML",
     icon: <FaHtml5 className="text-orange-500" />,

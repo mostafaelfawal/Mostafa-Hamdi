@@ -19,7 +19,7 @@ const item = {
 export default function About() {
   const { t } = useTranslation();
   return (
-    <section id="About" className="max-w-7xl mx-auto px-6 py-16 text-center">
+    <section id={t("about")} className="max-w-7xl mx-auto px-6 py-16 text-center">
       {/* Title */}
       <motion.h2
         className="text-center text-4xl font-bold text-gray-900 dark:text-white mb-4"

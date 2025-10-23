@@ -1,5 +1,5 @@
 import type { i18n } from "i18next";
-import type { LanguageType } from "../../types/types";
+import type { LanguageType } from "../../types/LanguageType";
 
 export const toggleLanguage = (
   language: LanguageType,

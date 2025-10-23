@@ -1,0 +1,36 @@
+src/
+├── components/
+│   ├── About.tsx
+│   ├── Contact.tsx
+│   ├── Footer.tsx
+│   ├── Header.tsx
+│   ├── Hero.tsx
+│   ├── ProjectCard.tsx
+│   ├── Projects.tsx
+│   ├── Skill.tsx
+│   └── SkillsContainer.tsx
+├── data/
+│   ├── devTools.tsx
+│   ├── languages.tsx
+│   ├── projects.ts
+│   ├── Skills.tsx
+│   └── skillsContainers.tsx
+├── locales/
+│   ├── ar.json
+│   └── en.json
+├── logic/
+│   ├── Toggles/
+│   │   ├── toggleLanguage.ts
+│   │   └── toggleTheme.ts
+│   ├── handleScroll.ts
+│   └── handleSendEmail.ts
+├── types/
+│   ├── FormType.ts
+│   ├── LanguageType.ts
+│   ├── ListSkills.ts
+│   ├── ProjectType.ts
+│   └── Skills.ts
+├── App.tsx
+├── i18n.ts
+├── index.css
+└── main.tsx
