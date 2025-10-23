@@ -1,7 +1,9 @@
 import { FaCode, FaServer, FaTools } from "react-icons/fa";
 import { languages } from "./languages";
-import { devTools } from "./Skills";
-import { softSkills } from "./devTools";
+import { devTools } from "./devToolss";
+import { softSkills } from "./softSkills";
+import { framework } from "./framework";
+import { SiFramework } from "react-icons/si";
 
 export const skillsContainer = [
   {
@@ -15,6 +17,12 @@ export const skillsContainer = [
     icon: <FaTools />,
     name: "developer_tools",
     color: "text-green-500",
+  },
+  {
+    listSkills: framework,
+    icon: <SiFramework />,
+    name: "frameworks_libraries",
+    color: "text-red-400",
   },
   {
     listSkills: softSkills,
