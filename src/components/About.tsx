@@ -73,20 +73,6 @@ export default function About() {
             ))}
           </div>
         </motion.div>
-
-        {/* Image */}
-        <motion.div
-          className="relative"
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, delay: 0.5 }}
-        >
-          <img
-            className="w-80 h-80 rounded-2xl object-cover shadow-2xl"
-            src="/images/8.png"
-            alt="mostafa-photo"
-          />
-        </motion.div>
       </div>
     </section>
   );
