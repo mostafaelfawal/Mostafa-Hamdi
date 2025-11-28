@@ -56,11 +56,11 @@ export default function Home() {
             className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed"
             variants={itemVariants}
           >
-            {t("jop_description")}
+            {t("jop_description")} {" "}
+            <span className="text-primary font-medium">Express.js</span>,{" "}
             <span className="text-primary font-medium">Next.js</span>,{" "}
-            <span className="text-primary font-medium">TypeScript</span>,{" "}
             <span className="text-primary font-medium">TailwindCSS</span>,{" "}
-            <span className="text-primary font-medium">React.js</span>.
+            <span className="text-primary font-medium">TypeScript</span>.
           </motion.p>
 
           <motion.div

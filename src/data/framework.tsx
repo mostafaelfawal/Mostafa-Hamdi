@@ -3,6 +3,7 @@ import { RiNextjsFill } from "react-icons/ri";
 import {
   SiMui,
   SiReacthookform,
+  SiReactquery,
   SiRedux,
   SiTailwindcss,
   SiZod,
@@ -25,4 +26,5 @@ export const framework: ListSkills[] = [
   },
   { name: "Zod", icon: <SiZod className="text-[#3068B7]" /> },
   { name: "hook-form", icon: <SiReacthookform className="text-[#EC5990]" /> },
+  { name: "React-Query", icon: <SiReactquery className="text-yellow-500" /> },
 ];

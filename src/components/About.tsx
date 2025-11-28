@@ -78,7 +78,7 @@ export default function About() {
                   "TailwindCSS",
                   "Node.js",
                   "MongoDB",
-                  "PostgreSQL",
+                  "Express.js",
                   "Git",
                 ].map((tech) => (
                   <span

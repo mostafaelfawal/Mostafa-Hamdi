@@ -1,6 +1,6 @@
 import { FaCode, FaServer, FaTools } from "react-icons/fa";
 import { languages } from "./languages";
-import { devTools } from "./devToolss";
+import { devTools } from "./devTools";
 import { softSkills } from "./softSkills";
 import { framework } from "./framework";
 import { SiFramework } from "react-icons/si";

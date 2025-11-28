@@ -3,6 +3,7 @@ import {
   SiAxios,
   SiFirebase,
   SiJest,
+  SiJsonwebtokens,
   SiPostman,
   SiTestinglibrary,
   SiVercel,
@@ -11,6 +12,7 @@ import {
 import type { ListSkills } from "../types/ListSkills";
 
 export const devTools: ListSkills[] = [
+  { name: "JWT", icon: <SiJsonwebtokens className="text-[#00ffb3]" /> },
   { name: "Vite", icon: <SiVite className="text-[#646CFF]" /> },
   { name: "Firebase", icon: <SiFirebase className="text-[#FFCA28]" /> },
   { name: "Postman", icon: <SiPostman className="text-[#FF6C37]" /> },
