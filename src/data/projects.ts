@@ -16,7 +16,7 @@ export const projects: ProjectType[] = [
     finished: false,
   },
   {
-    img: "public/images/postify.png",
+    img: "/images/postify.png",
     title: {
       en: "Postify - Social Media App",
       ar: "Postify - تطبيق وسائل التواصل الاجتماعي",

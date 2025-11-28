@@ -18,11 +18,9 @@ export default function ProjectCard({
 
   return (
     <motion.article
-      className="group bg-white dark:bg-gray-800 rounded-3xl overflow-hidden shadow-2xl hover:shadow-3xl transition-all duration-500 flex flex-col border border-gray-200 dark:border-gray-700"
+      className="hover:-translate-y-5 group bg-white dark:bg-gray-800 rounded-3xl overflow-hidden shadow-2xl hover:shadow-3xl transition-all duration-500 flex flex-col border border-gray-200 dark:border-gray-700"
       initial={{ opacity: 0, y: 30 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.4 }}
-      whileHover={{ y: -8 }}
     >
       {/* Image Container with Overlay */}
       <div className="relative overflow-hidden">
@@ -89,20 +87,19 @@ export default function ProjectCard({
 
         {/* Footer Actions */}
         <div className="flex items-center justify-between pt-4 border-t border-gray-200 dark:border-gray-600">
-          <motion.a
+          <a
             href={githubLink}
             target="_blank"
-            className="flex items-center gap-2 px-4 py-2 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors group/github"
-            whileHover={{ x: 5 }}
+            className="hover:translate-x-5 flex items-center gap-2 px-4 py-2 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-all group/github"
           >
             <FaGithub className="text-xl group-hover/github:text-purple-600 transition-colors" />
             <span className="font-medium">{t("view_code")}</span>
-          </motion.a>
+          </a>
 
           <motion.a
             href={liveDemoLink}
             target="_blank"
-            className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-primary to-blue-600 text-white rounded-xl font-semibold hover:shadow-lg transition-all group/demo"
+            className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-primary to-blue-600 text-white rounded-xl font-semibold hover:shadow-lg transition-all"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
