@@ -36,6 +36,9 @@
   "contact_email_label": "Email",
   "contact_linkedin_label": "LinkedIn",
   "contact_github_label": "GitHub",
+  "completed": "completed",
+  "not_completed": "not completed",
+
 
   "copyright": "All rights reserved"
 }

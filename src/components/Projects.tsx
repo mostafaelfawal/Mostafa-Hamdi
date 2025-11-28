@@ -45,6 +45,7 @@ export default function Projects() {
             description={p.description}
             liveDemoLink={p.liveDemoLink}
             githubLink={p.githubLink}
+            finished={p.finished}
           />
         ))}
       </motion.div>

@@ -4,4 +4,5 @@ export type ProjectType = {
   description: { en: string; ar: string };
   liveDemoLink: string;
   githubLink: string;
+  finished: boolean;
 };

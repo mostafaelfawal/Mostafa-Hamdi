@@ -12,6 +12,7 @@ export default function ProjectCard({
   description,
   liveDemoLink,
   githubLink,
+  finished,
 }: ProjectType) {
   const { i18n, t } = useTranslation();
   const lang = i18n.language;
@@ -31,9 +32,20 @@ export default function ProjectCard({
         alt={title[lang as LanguageType]}
       />
       <div className="p-6 flex flex-col flex-grow">
-        <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
-          {title[lang as LanguageType]}
-        </h3>
+        <div className="flex items-center justify-between mb-2">
+          <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
+            {title[lang as LanguageType]}
+          </h3>
+        </div>
+        {finished ? (
+          <span className="rounded-full border px-3 py-1 text-sm text-green-500 border-green-500">
+            {t("completed")}
+          </span>
+        ) : (
+          <span className="rounded-full border px-3 py-1 text-sm text-red-500 border-red-500">
+            {t("not_completed")}
+          </span>
+        )}
         <p className="text-gray-600 dark:text-gray-400 mb-4 flex-grow">
           {description[lang as LanguageType]}
         </p>

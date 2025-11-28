@@ -36,6 +36,8 @@
   "contact_email_label": "البريد الإلكتروني",
   "contact_linkedin_label": "لينكدإن",
   "contact_github_label": "جيت هب",
+  "completed": "مكتمل",
+  "not_completed": "غير مكتمل",
 
   "copyright": "جميع الحقوق محفوظة"
 }
