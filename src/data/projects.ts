@@ -53,8 +53,8 @@ export const projects: ProjectType[] = [
       en: "Interactive To-Do app with cartoon UI, filters, animations, sounds, themes, and progress tracking using Next.js and MongoDB.",
       ar: "تطبيق مهام تفاعلي بواجهة كرتونية، يدعم الفلترة، الأنيميشن، الأصوات، الثيمات، وتتبع التقدّم باستخدام Next.js وMongoDB.",
     },
-    liveDemoLink: "https://store-hub-iota.vercel.app/",
-    githubLink: "https://github.com/mostafaelfawal/StoreHub",
+    liveDemoLink: "https://todo-mostafa-hamdi.vercel.app/",
+    githubLink: "https://github.com/mostafaelfawal/todos-mostafa-hamdi",
     finished: true,
   },
   {
