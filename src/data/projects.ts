@@ -30,6 +30,34 @@ export const projects: ProjectType[] = [
     finished: false,
   },
   {
+    img: "/images/dot-note.png",
+    title: {
+      en: "Dot Note – Full-Stack Notes Application",
+      ar: "Dot Note – تطبيق ملاحظات كامل",
+    },
+    description: {
+      en: "Full-stack notes app with auth, CRUD, search, tags, validation, and notifications using Next.js and MongoDB.",
+      ar: "تطبيق ملاحظات متكامل يدعم التسجيل والدخول، CRUD، البحث، الوسوم، التحقق من المدخلات، والإشعارات باستخدام Next.js وMongoDB.",
+    },
+    liveDemoLink: "https://dot-note-front.vercel.app/",
+    githubLink: "https://github.com/mostafaelfawal/my-note",
+    finished: true,
+  },
+  {
+    img: "/images/todos.png",
+    title: {
+      en: "ToDoList – Animated Productivity App",
+      ar: "ToDoList - تطبيق ادارة مهام",
+    },
+    description: {
+      en: "Interactive To-Do app with cartoon UI, filters, animations, sounds, themes, and progress tracking using Next.js and MongoDB.",
+      ar: "تطبيق مهام تفاعلي بواجهة كرتونية، يدعم الفلترة، الأنيميشن، الأصوات، الثيمات، وتتبع التقدّم باستخدام Next.js وMongoDB.",
+    },
+    liveDemoLink: "https://store-hub-iota.vercel.app/",
+    githubLink: "https://github.com/mostafaelfawal/StoreHub",
+    finished: true,
+  },
+  {
     img: "/images/E-commerce.png",
     title: {
       en: "StoreHub - E-commerce & Admin Dashboard",
@@ -55,20 +83,6 @@ export const projects: ProjectType[] = [
     },
     liveDemoLink: "https://amjaad-estate-lading.vercel.app/",
     githubLink: "https://github.com/mostafaelfawal/Amjaad-Lading-Page",
-    finished: true,
-  },
-  {
-    img: "/images/Fylo landing page.png",
-    title: {
-      en: "Fylo Landing Page",
-      ar: "صفحة هبوط Fylo",
-    },
-    description: {
-      en: "Responsive landing page with interactive elements and animations.",
-      ar: "صفحة هبوط متجاوبة مع عناصر تفاعلية ورسوم متحركة.",
-    },
-    liveDemoLink: "https://fylo-ladning-page.vercel.app",
-    githubLink: "https://github.com/mostafaelfawal/Fylo-Ladning-Page",
     finished: true,
   },
 ];
